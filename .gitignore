@@ -1,3 +1,9 @@
 .project
 jcore-pipelines/detectStopWords/*
 jcore-pipelines/detectUMLSentries/*
+/build/
+/.classpath
+/outPubMedTxt/
+/allGermanPubMedCaseAbstracts-20200221.xml
+.settings/*
+
