@@ -9,6 +9,10 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
+import org.apache.tika.langdetect.OptimaizeLangDetector;
+import org.apache.tika.language.detect.LanguageDetector;
+import org.apache.tika.language.detect.LanguageResult;
+
 /**
  * We installed Entrez Direct from and run at Feb 21 2020:
  * esearch -db pubmed-query "Case Reports[Publication Type] AND GER[LA]" | efetch -format xml > allGermanPubMedCaseAbstracts-20200221.xml
@@ -35,6 +39,7 @@ public class extractPubMedCaseAbstracts {
 		boolean readAbstract = false;
 		String pmid = "";
 		String text = "";
+		HashSet<String> pmids = new HashSet<String>();
 
 		for (int i = 0; i < lines.size(); i++) {
 			if (lines.get(i).startsWith("<PMID Version=\"1\">")) {
@@ -73,7 +78,19 @@ public class extractPubMedCaseAbstracts {
 				textDocument.setText(text);
 				textDocument.setId(pmid);
 
-				listDocuments.add(textDocument);
+				LanguageDetector detector = new OptimaizeLangDetector().loadModels();
+				LanguageResult result = detector.detect(text);
+				String lang = result.getLanguage();
+
+				if ( (!(pmids.contains(pmid))) && (lang.equals("de")) )
+				{
+					listDocuments.add(textDocument);
+					pmids.add(pmid);
+				}
+				else
+				{
+					System.out.println("WARNING: " + pmid + " has more than 1 Abstract or is not German.");
+				}
 
 				text = "";
 			}
@@ -100,9 +117,9 @@ public class extractPubMedCaseAbstracts {
 			Files.write(Paths.get(fileName), listDocuments.get(i).getText().getBytes());
 			pmids.add(listDocuments.get(i).getId());
 		}
-		
+
 		String filePMids = "Used Abstracts from following German PubMed Identifiers\n" + pmids.toString();
-		
+
 		Files.write(Paths.get("usedPubMedIds.txt"), filePMids.getBytes());
 	}
 }

@@ -7,3 +7,4 @@ jcore-pipelines/detectUMLSentries/*
 /allGermanPubMedCaseAbstracts-20200221.xml
 .settings/*
 
+/target/
