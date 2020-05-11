@@ -7,7 +7,19 @@
 	<groupId>AMIA2020</groupId>
 	<artifactId>AMIA2020</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+	
+	<parent>
+		<groupId>de.julielab</groupId>
+		<artifactId>jcore-projects</artifactId>
+		<version>2.3.10</version>
+	</parent>
+	
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.apache.tika/tika-langdetect -->
 		<dependency>
@@ -15,11 +27,54 @@
 			<artifactId>tika-langdetect</artifactId>
 			<version>1.23</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.tika</groupId>
+			<artifactId>tika-core</artifactId>
+			<version>1.20</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.tika</groupId>
+			<artifactId>tika-parsers</artifactId>
+			<version>1.20</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.10</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.julielab</groupId>
+			<artifactId>jcore-jsbd-ae-medical-german</artifactId>
+			<version>2.3.10</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.julielab</groupId>
+			<artifactId>jcore-jtbd-ae-medical-german</artifactId>
+			<version>2.3.10</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.julielab</groupId>
+			<artifactId>jcore-jpos-ae-medical-german</artifactId>
+			<version>2.3.10</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>junit</groupId>
-		<artifactId>junit</artifactId>
-		<version>3.8.1</version>
-		<scope>test</scope>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 

@@ -8,3 +8,6 @@ jcore-pipelines/detectUMLSentries/*
 .settings/*
 
 /target/
+/bin/
+
+/output/

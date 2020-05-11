@@ -36,3 +36,8 @@ Einstellung des zu filternden Wörterbuches und des Stopwörterbuches in folgend
 * and have a look into 
    * offsets.tsv
    * data/outData/output-xmi
+   
+# Conversion of corpus XML file to plain text and preprocessing
+
+* Copy `cpg-corpus-cms.xml` into src/main/resources
+* Usage: Start CPGXMLReader.java and look into the directory /output (`mvn exec:java -Dexec.mainClass="de.hpi.guidelines.reader.CPGXMLReader"` from the command line).
