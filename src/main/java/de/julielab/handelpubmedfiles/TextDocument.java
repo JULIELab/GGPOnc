@@ -1,4 +1,4 @@
-package handelpubmedfiles;
+package de.julielab.handelpubmedfiles;
 
 import java.util.ArrayList;
 import java.util.List;

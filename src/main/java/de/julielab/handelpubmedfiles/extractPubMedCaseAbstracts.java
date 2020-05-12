@@ -1,4 +1,4 @@
-package handelpubmedfiles;
+package de.julielab.handelpubmedfiles;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,14 +15,14 @@ import org.apache.tika.language.detect.LanguageResult;
 
 /**
  * We installed Entrez Direct from and run at Feb 21 2020:
- * esearch -db pubmed-query "Case Reports[Publication Type] AND GER[LA]" | efetch -format xml > allGermanPubMedCaseAbstracts-20200221.xml
+ * esearch -db pubmed-query "Case Reports[Publication Type] AND GER[LA]" | efetch -format xml > allGermanPubMedCaseAbstracts.xml
  * This file is the inport for the following code.
  */
 
 public class extractPubMedCaseAbstracts {
 	public static void main(String[] args) throws IOException// , UIMAException
 	{
-		String source = "allGermanPubMedCaseAbstracts-20200221.xml"; // 300 MB
+		String source = "allGermanPubMedCaseAbstracts.xml"; // 300 MB
 		String out = "outPubMedTxt";
 
 		List<TextDocument> listDocuments = new ArrayList<>();
