@@ -13,16 +13,9 @@ public class CleanText
 			text = text.replaceFirst(" +", "");
 		}
 
-		text = text.replaceAll("\\*", " * ");
-
 		text = text.replaceAll("\\,+", ",");
 		text = text.replaceAll("\\,\\.", ".");
-		text = text.replaceAll("\\r\\n- ?\\r\\n", "- ");
-		text = text.replaceAll("\\n- ?\\n", "- ");
-		text = text.replaceAll("\\n-", "\n- ");
-
-		text = text.replaceAll("\\n ", "\n");
-		text = text.replaceAll("\\n+", "\n");
+		text = text.replaceAll("\r\n- ?\r\n", "- ");
 		text = text.replaceAll(" +", " ");
 
 		text = text.trim();
