@@ -41,7 +41,6 @@
 * Usage: Start CPGXMLReader.java and look into the directory /output (`mvn exec:java -Dexec.mainClass="de.hpi.guidelines.reader.CPGXMLReader"` from the command line).
 
 # Get German PubMed Abstracts from Case Reports
-* # Dictionary Format
 
  * install the [Entres API from NCBI](https://www.ncbi.nlm.nih.gov/books/NBK179288/)
  * run the following command:
