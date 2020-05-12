@@ -43,7 +43,7 @@
 # Get German PubMed Abstracts from Case Reports
 * # Dictionary Format
 
- * install the `Entres API` from [NCBI](https://www.ncbi.nlm.nih.gov/books/NBK179288/)
+ * install the [Entres API from NCBI](https://www.ncbi.nlm.nih.gov/books/NBK179288/)
  * run the following command:
  * `esearch -db pubmed -query "Case Reports[Publication Type] AND GER[LA]" | efetch -format xml > allGermanPubMedCaseAbstracts.xml`
  * import the file name of the extracted XML file in `allGermanPubMedCaseAbstracts.java` (in package de.julielab.handelpubmedfiles)
