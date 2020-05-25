@@ -25,6 +25,5 @@ big_dic_gene = create_big_dic(dic_path_gene, '\t')
 
 big_dic_file = open('bic_dic.txt', 'w')
 big_dic_file.write(big_dic_umls)
-big_dic_file.write(big_dic_redlist)
 big_dic_file.write(big_dic_gene)
 big_dic_file.close()
