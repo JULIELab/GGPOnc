@@ -11,3 +11,4 @@ jcore-pipelines/detectUMLSentries/*
 /bin/
 
 /output/
+.idea
