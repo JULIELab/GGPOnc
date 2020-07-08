@@ -1,5 +1,5 @@
-AMIA2020
-========
+GGPOnc - A Corpus of German Medical Text with Rich Metadata Based on Clinical Practice Guidelines
+=================================================================================================
 
 # Creation text data
 
