@@ -13,3 +13,5 @@ jcore-pipelines/detectUMLSentries/*
 /output/
 .idea
 /output-PubMedTxt/
+/MRCONSO.RRF
+/MRSTY.RRF
