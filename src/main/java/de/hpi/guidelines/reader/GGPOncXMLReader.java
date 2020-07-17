@@ -25,7 +25,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-import de.hpi.guidelines.tools.CPGJAXBXMLHandler;
+import de.hpi.guidelines.tools.GGPOncJAXBXMLHandler;
 import de.julielab.annotation.GetSentencesTokensFraMed;
 import de.julielab.annotation.StandOffToken;
 import de.julielab.annotation.TextAnnotation;
@@ -36,7 +36,7 @@ import de.julielab.tools.CleanText;
  * 
  * @author Florian.Borchert
  */
-public class CPGXMLReader {
+public class GGPOncXMLReader {
 
 	public static final boolean RECOMMENDATIONS_ONLY = false;
 
@@ -45,11 +45,11 @@ public class CPGXMLReader {
 	private static ArrayList<TextAnnotation> rec_annotatedCorpus = new ArrayList<TextAnnotation>();
 	private static ArrayList<TextAnnotation> annotatedCorpus = new ArrayList<TextAnnotation>();
 
-	public static final Logger LOGGER = Logger.getLogger(CPGXMLReader.class.getName());
+	public static final Logger LOGGER = Logger.getLogger(GGPOncXMLReader.class.getName());
 
 	private static Path importFile = Paths.get("src", "main", "resources", "cpg-corpus-cms.xml");
 
-	private static final Path output = Paths.get("output");
+	private static final Path output = Paths.get("output-GGPOnc-data");
 	private static final Path outDirXML = Paths.get(output + File.separator + "xml");
 	private static final Path outDirTXT = Paths.get(output + File.separator + "txt");
 	private static final Path outDirTXTfiles = Paths.get(output + File.separator + "txt" + File.separator + "files");
@@ -301,7 +301,7 @@ public class CPGXMLReader {
 
 	private static void writeAnno(String annoFile, List<TextAnnotation> annotatedCorpus) throws IOException {
 		try {
-			CPGJAXBXMLHandler.marshalAnnotation(annotatedCorpus, new File(outDirXML + File.separator + annoFile));
+			GGPOncJAXBXMLHandler.marshalAnnotation(annotatedCorpus, new File(outDirXML + File.separator + annoFile));
 		} catch (JAXBException e) {
 			throw new RuntimeException(e);
 		}

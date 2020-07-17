@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlAccessorType(XmlAccessType.PROPERTY)
 @XmlRootElement(name = "document")
-public class CPGDocument {
+public class GGPOncDocument {
 
 	private String name;
 	

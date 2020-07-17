@@ -11,23 +11,23 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "corpus")
-public class CPGCollecedCorpus
+public class GGPOncCollecedCorpus
 {
-	@XmlElement(name = "document", type = CPGDocument.class)
-	private static List<CPGDocument> listDocuments = new ArrayList<CPGDocument>();
+	@XmlElement(name = "document", type = GGPOncDocument.class)
+	private static List<GGPOncDocument> listDocuments = new ArrayList<GGPOncDocument>();
 
-	public CPGCollecedCorpus(){}
+	public GGPOncCollecedCorpus(){}
 
-	public CPGCollecedCorpus(List<CPGDocument> listDocuments) {
-		CPGCollecedCorpus.listDocuments = listDocuments;
+	public GGPOncCollecedCorpus(List<GGPOncDocument> listDocuments) {
+		GGPOncCollecedCorpus.listDocuments = listDocuments;
 	}
 
-	public List<CPGDocument> getListDocuments() {
+	public List<GGPOncDocument> getListDocuments() {
 		return listDocuments;
 	}
 
-	public static void setListDocuments(List<CPGDocument> listDocuments) {
-		CPGCollecedCorpus.listDocuments = listDocuments;
+	public static void setListDocuments(List<GGPOncDocument> listDocuments) {
+		GGPOncCollecedCorpus.listDocuments = listDocuments;
 	}
 
 	public int getNumberDocuments() {
@@ -36,7 +36,7 @@ public class CPGCollecedCorpus
 
 	public int getNumberRecommendations() {
 		int n = 0;
-		for (CPGDocument doc : listDocuments) {
+		for (GGPOncDocument doc : listDocuments) {
 			n += doc.getRecommendations().size();
 		}
 		return n;
