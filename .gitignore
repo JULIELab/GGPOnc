@@ -12,3 +12,4 @@ jcore-pipelines/detectUMLSentries/*
 
 /output/
 .idea
+/output-PubMedTxt/
