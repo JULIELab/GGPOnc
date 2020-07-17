@@ -1,4 +1,4 @@
-GGPOnc - A Corpus of German Medical Text with Rich Metadata Based on Clinical Practice Guidelines
+GGPONC - A Corpus of German Medical Text with Rich Metadata Based on Clinical Practice Guidelines
 =================================================================================================
 
 This repository contains all the code handling the preprint **TBA**
@@ -7,9 +7,9 @@ This repository contains all the code handling the preprint **TBA**
 
 ## Requesting text data
 
-* GGPOnc source files:
-    * **TBA**
-    * copy `cpg-corpus-cms.xml` into `src/main/resources`
+* GGPONC source files:
+    * Follow the instructions of the [GGPONC website (Access & Download)](https://www.leitlinienprogramm-onkologie.de/projekte/ggponc-english/)
+    * Copy `cpg-corpus-cms.xml` into `src/main/resources`
 * PubMed Abstracts from German Case Reports and Case Descriptions
     * Install [Entres API from NCBI](https://www.ncbi.nlm.nih.gov/books/NBK179288/) or [EDirect](https://dataguide.nlm.nih.gov/edirect/install.html), the commandline tools requesting the PubMed infrastructure
     * Open a terminal and type `esearch -db pubmed -query "Case Reports[Publication Type] AND GER[LA]" | efetch -format xml > allGermanPubMedCaseAbstracts.xml` (This step could take an hour.)
