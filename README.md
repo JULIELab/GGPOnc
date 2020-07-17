@@ -16,8 +16,8 @@ This repository contains all the code handling the preprint **TBA**
     * export the extracted file `allGermanPubMedCaseAbstracts.xml` into `src/main/resources`
 * JSYNCC v1.1: follow the instructions of [https://github.com/JULIELab/jsyncc](https://github.com/JULIELab/jsyncc) or contact [Christina Lohr](https://github.com/chlor)
 * [3000PA](http://ebooks.iospress.nl/volumearticle/48747): no public access
-* [KRAUTS Corpus](https://sites.google.com/site/ittimeml/documents)(Strötgen et al) and [see also](https://www.aclweb.org/anthology/L18-1085/): 
-* [WikiWarsDe Corpus](https://heidata.uni-heidelberg.de/dataset.xhtml?persistentId=doi:10.11588/data/10026) and [see also](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.384.6136&rep=rep1&type=pdf#page=135)
+* [KRAUTS Corpus](https://sites.google.com/site/ittimeml/documents) [(Strötgen et al)](https://www.aclweb.org/anthology/L18-1085/): 
+* [WikiWarsDe Corpus](https://heidata.uni-heidelberg.de/dataset.xhtml?persistentId=doi:10.11588/data/10026) [(Strötgen et al)](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.384.6136&rep=rep1&type=pdf#page=135)
 
 ## UMLS Terminology data
 
