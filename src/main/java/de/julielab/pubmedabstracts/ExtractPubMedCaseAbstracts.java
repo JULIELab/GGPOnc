@@ -1,4 +1,4 @@
-package de.julielab.handelpubmedfiles;
+package de.julielab.pubmedabstracts;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,22 +19,26 @@ import org.apache.tika.language.detect.LanguageResult;
  * This file is the inport for the following code.
  */
 
-public class extractPubMedCaseAbstracts {
+public class ExtractPubMedCaseAbstracts
+{
 	public static void main(String[] args) throws IOException// , UIMAException
 	{
-		String source = "allGermanPubMedCaseAbstracts.xml"; // 300 MB
-		String out = "outPubMedTxt";
+		Path sourcePubMedXML = Paths.get("src", "main", "resources", "allGermanPubMedCaseAbstracts.xml");
+		Path outDir = Paths.get("output-PubMedTxt");
+
+		Path usedPMIDsFile = Paths.get("src", "main", "resources", "usedPubMedIds_20200221.txt");
 
 		List<TextDocument> listDocuments = new ArrayList<>();
-		listDocuments = extractContent(source);
+		listDocuments = extractContent(sourcePubMedXML, usedPMIDsFile);
 
-		writeTxtFiles(Paths.get(out), listDocuments);
+		writeTxtFiles(outDir, listDocuments);
 	}
 
-	public static List<TextDocument> extractContent(String source) throws IOException {
+	public static List<TextDocument> extractContent(Path source, Path usedPMIDsFile) throws IOException {
 		List<TextDocument> listDocuments = new ArrayList<>();
 		String language = "ger";
-		List<String> lines = Files.readAllLines(Paths.get(source));
+		List<String> lines = Files.readAllLines(source);
+		List<String> usedPMID = Files.readAllLines(usedPMIDsFile);
 
 		boolean readAbstract = false;
 		String pmid = "";
@@ -82,7 +86,7 @@ public class extractPubMedCaseAbstracts {
 				LanguageResult result = detector.detect(text);
 				String lang = result.getLanguage();
 
-				if ( (!(pmids.contains(pmid))) && (lang.equals("de")) )
+				if ( (!(pmids.contains(pmid))) && (lang.equals("de")) && (usedPMID.contains(pmid)) )
 				{
 					listDocuments.add(textDocument);
 					pmids.add(pmid);
@@ -118,8 +122,7 @@ public class extractPubMedCaseAbstracts {
 			pmids.add(listDocuments.get(i).getId());
 		}
 
-		String filePMids = "Used Abstracts from following German PubMed Identifiers\n" + pmids.toString();
-
-		Files.write(Paths.get("usedPubMedIds.txt"), filePMids.getBytes());
+//		String filePMids = "Used Abstracts from following German PubMed Identifiers\n" + pmids.toString();
+//		Files.write(Paths.get("usedPubMedIds.txt"), filePMids.getBytes());
 	}
 }
