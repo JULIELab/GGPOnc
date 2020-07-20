@@ -1,7 +1,9 @@
 GGPONC - A Corpus of German Medical Text with Rich Metadata Based on Clinical Practice Guidelines
+
 =================================================================================================
 
-This repository contains all the code handling the preprint **TBA**
+This repository contains the code to reproduce the results in:
+[https://arxiv.org/abs/2007.06400](https://arxiv.org/abs/2007.06400)
 
 # Prerequisites
 
