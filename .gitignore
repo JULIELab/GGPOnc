@@ -9,9 +9,11 @@ jcore-pipelines/detectUMLSentries/*
 
 /target/
 /bin/
+/temp/
 
 /output/
 .idea
+.vscode
 /output-PubMedTxt/
 /MRCONSO.RRF
 /MRSTY.RRF

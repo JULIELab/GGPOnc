@@ -91,3 +91,10 @@ This repository contains the code to reproduce the results in:
 * Results 
    * `offsets.tsv`
    * `data/outData/output-xmi`
+
+# Evaluation
+
+To calculate precision and recall between automatically created annotations and the human annotated data run:
+
+* `pip install bratutils`
+* `python src/main/python/umls_evaluation.py <path to gold annotations> <path to automatic annotations>`
