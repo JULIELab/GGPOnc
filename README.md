@@ -47,7 +47,7 @@ This repository contains the code to reproduce the results in:
 # Processing the data
 
 ## Conversion of GGPOnc corpus XML file to plain text and preprocessing
-* Run `mvn compile` before executing `mvn exec:java -Dexec.mainClass="de.hpi.guidelines.reader.CPGXMLReader"` or run `CPGXMLReader.java` (in package `de.hpi.guidelines.reader`) in Eclipse (Run As => Java Application)
+* Run `mvn compile` before executing `mvn exec:java -Dexec.mainClass="de.hpi.guidelines.reader.GGPOncXMLReader" -Dexec.args="<Path to cpg-corpus-cms.xml>"` or run `GGPOncXMLReader.java` (in package `de.hpi.guidelines.reader`) in Eclipse (Run As => Java Application)
 * Wait a minute
 * Look into the directory `/output`
 

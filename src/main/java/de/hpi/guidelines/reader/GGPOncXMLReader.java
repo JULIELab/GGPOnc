@@ -47,8 +47,6 @@ public class GGPOncXMLReader {
 
 	public static final Logger LOGGER = Logger.getLogger(GGPOncXMLReader.class.getName());
 
-	private static Path importFile = Paths.get("src", "main", "resources", "cpg-corpus-cms.xml");
-
 	private static final Path output = Paths.get("output-GGPOnc-data");
 	private static final Path outDirXML = Paths.get(output + File.separator + "xml");
 	private static final Path outDirTXT = Paths.get(output + File.separator + "txt");
@@ -72,9 +70,10 @@ public class GGPOncXMLReader {
 	}
 
 	public static void main(String[] args) throws Exception {
+		String importFile = args[0];
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-		Document doc = dBuilder.parse(importFile.toFile());
+		Document doc = dBuilder.parse(new File(importFile));
 
 		doc.getDocumentElement().normalize();
 
