@@ -1,9 +1,8 @@
 GGPONC - A Corpus of German Medical Text with Rich Metadata Based on Clinical Practice Guidelines
-
 =================================================================================================
 
 This repository contains the code to reproduce the results in:
-[https://arxiv.org/abs/2007.06400](https://arxiv.org/abs/2007.06400)
+Florian Borchert, Christina Lohr, Luise Modersohn, Thomas Langer, Markus Follmann, Jan Philipp Sachs, Udo Hahn, Matthieu-P. Schapranow. [GGPONC: A Corpus of German Medical Text with Rich Metadata Based on Clinical Practice Guidelines](http://arxiv.org/abs/2007.06400). ArXiv:2007.06400 [Cs]. [[arXiv](http://arxiv.org/abs/2007.06400)] [[Code on GitHub](https://github.com/JULIELab/GGPOnc)] [[data-request@DKG](https://www.leitlinienprogramm-onkologie.de/projekte/ggponc-english/)] accepted at [[LOUHI@EMNLP'20](https://louhi2020.fbk.eu/)) [https://arxiv.org/abs/2007.06400](https://arxiv.org/abs/2007.06400)
 
 # Prerequisites
 
@@ -91,6 +90,7 @@ This repository contains the code to reproduce the results in:
 * Results 
    * `offsets.tsv`
    * `data/outData/output-xmi`
+* This JCoRe pipeline is dervived of the JULIE Lab own [jcore-pipeline-modules](https://github.com/JULIELab/jcore-pipeline-modules) (see also https://zenodo.org/record/4066619#.X3sPVS8Rp-U)
 
 # Evaluation
 
