@@ -92,9 +92,9 @@ Florian Borchert, Christina Lohr, Luise Modersohn, Thomas Langer, Markus Follman
    * `data/outData/output-xmi`
 * This JCoRe pipeline is dervived of the JULIE Lab own [jcore-pipeline-modules](https://github.com/JULIELab/jcore-pipeline-modules) (see also https://zenodo.org/record/4066619#.X3sPVS8Rp-U)
 
-# Evaluation
+# Evaluation of Annotations
 
-To calculate precision and recall between automatically created annotations and the human annotated data run:
-
-* `pip install bratutils`
-* `python src/main/python/umls_evaluation.py <path to gold annotations> <path to automatic annotations>`
+* To calculate the inter-annotator-agreement between human annotators follow the instructions of [bratiaa](https://github.com/kldtz/bratiaa)
+* To calculate precision and recall between automatically created annotations and the human annotated data run:
+   * `pip install bratutils`
+   * `python src/main/python/umls_evaluation.py <path to gold annotations> <path to automatic annotations>`
