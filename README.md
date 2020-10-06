@@ -90,7 +90,7 @@ Florian Borchert, Christina Lohr, Luise Modersohn, Thomas Langer, Markus Follman
 * Results 
    * `offsets.tsv`
    * `data/outData/output-xmi`
-* This JCoRe pipeline is dervived of the JULIE Lab own [jcore-pipeline-modules](https://github.com/JULIELab/jcore-pipeline-modules) (see also https://zenodo.org/record/4066619#.X3sPVS8Rp-U)
+* This JCoRe pipeline is derived of the JULIE Lab own [jcore-pipeline-modules](https://github.com/JULIELab/jcore-pipeline-modules) (see also https://zenodo.org/record/4066619#.X3sPVS8Rp-U)
 
 # Evaluation of Annotations
 
