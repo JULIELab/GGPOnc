@@ -11,7 +11,8 @@ jcore-pipelines/detectUMLSentries/*
 /bin/
 /temp/
 
-/output/
+/output-*/
+GGPONC-*.jar
 .idea
 .vscode
 /output-PubMedTxt/
