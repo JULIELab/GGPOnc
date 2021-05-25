@@ -106,7 +106,7 @@ class GGPOncMetaData {
 		while (current.getParentNode() != null && current.getParentNode().getNodeType() != Node.DOCUMENT_NODE) {
 			current = (Element) current.getParentNode();
 			if (current.getTagName().equals("section") || current.getTagName().equals("document")) {
-				structure.add(0, current.getElementsByTagName("name").item(0).getTextContent().trim());
+				structure.add(0, current.getElementsByTagName("name").item(0).getTextContent().replaceAll("\\s+", " ").trim());
 				if (current.getTagName().equals("document")) {
 					structure.add(0, current.getAttribute("id").trim());
 				}

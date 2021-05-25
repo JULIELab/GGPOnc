@@ -12,7 +12,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-import de.hpi.guidelines.reader.GGPOncCollecedCorpus;
+import de.hpi.guidelines.reader.GGPOncCollectedCorpus;
 import de.hpi.guidelines.reader.GGPOncDocument;
 import de.julielab.annotation.AnnotatedCorpus;
 import de.julielab.annotation.TextAnnotation;
@@ -24,14 +24,14 @@ public class GGPOncJAXBXMLHandler {
 	public static void marshalCorpus(List<GGPOncDocument> listOfDocuments, File outputFile)
 			throws IOException, JAXBException {
 		JAXBContext context;
-		context = JAXBContext.newInstance(GGPOncCollecedCorpus.class);
+		context = JAXBContext.newInstance(GGPOncCollectedCorpus.class);
 
 		BufferedWriter writer = null;
 		writer = new BufferedWriter(new FileWriter(outputFile));
 
 		Marshaller m = context.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-		GGPOncCollecedCorpus corpus = new GGPOncCollecedCorpus(listOfDocuments);
+		GGPOncCollectedCorpus corpus = new GGPOncCollectedCorpus(listOfDocuments);
 		m.marshal(corpus, writer);
 		logger.info("Written corpus with " + corpus.getNumberDocuments() + " documents and "
 				+ corpus.getNumberRecommendations() + " elements");
@@ -40,11 +40,11 @@ public class GGPOncJAXBXMLHandler {
 
 	// import XML - corpus
 	public static List<GGPOncDocument> unmarshalCorpus(File importFile) throws JAXBException {
-		GGPOncCollecedCorpus col = new GGPOncCollecedCorpus();
+		GGPOncCollectedCorpus col = new GGPOncCollectedCorpus();
 
-		JAXBContext context = JAXBContext.newInstance(GGPOncCollecedCorpus.class);
+		JAXBContext context = JAXBContext.newInstance(GGPOncCollectedCorpus.class);
 		Unmarshaller um = context.createUnmarshaller();
-		col = (GGPOncCollecedCorpus) um.unmarshal(importFile);
+		col = (GGPOncCollectedCorpus) um.unmarshal(importFile);
 
 		return col.getListDocuments();
 	}

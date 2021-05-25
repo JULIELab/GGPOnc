@@ -11,15 +11,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "corpus")
-public class GGPOncCollecedCorpus
+public class GGPOncCollectedCorpus
 {
 	@XmlElement(name = "document", type = GGPOncDocument.class)
 	private static List<GGPOncDocument> listDocuments = new ArrayList<GGPOncDocument>();
 
-	public GGPOncCollecedCorpus(){}
+	public GGPOncCollectedCorpus(){}
 
-	public GGPOncCollecedCorpus(List<GGPOncDocument> listDocuments) {
-		GGPOncCollecedCorpus.listDocuments = listDocuments;
+	public GGPOncCollectedCorpus(List<GGPOncDocument> listDocuments) {
+		GGPOncCollectedCorpus.listDocuments = listDocuments;
 	}
 
 	public List<GGPOncDocument> getListDocuments() {
@@ -27,7 +27,7 @@ public class GGPOncCollecedCorpus
 	}
 
 	public static void setListDocuments(List<GGPOncDocument> listDocuments) {
-		GGPOncCollecedCorpus.listDocuments = listDocuments;
+		GGPOncCollectedCorpus.listDocuments = listDocuments;
 	}
 
 	public int getNumberDocuments() {
