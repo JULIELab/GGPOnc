@@ -141,6 +141,7 @@ public class GGPOncXMLReader {
 		int[] num_rec_tokens = new int[n];
 		int[] num_sentences = new int[n];
 		int[] num_tokens = new int[n];
+		int[] num_docs = new int[n];
 		int[] num_litrefs = new int[n];
 		SortedSet<String> all_types = new TreeSet<>();
 		SortedSet<String> all_rec_types = new TreeSet<>();
@@ -158,7 +159,6 @@ public class GGPOncXMLReader {
 
 			NodeList recommendations = cpgDoc.getElementsByTagName("recommendation");
 
-			num_recommendations[i] = recommendations.getLength();
 			num_litrefs[i] = cpgDoc.getElementsByTagName("litref").getLength();
 
 			Pattern p = Pattern.compile("(###.*|.*###)"); // Removing headings
@@ -202,6 +202,7 @@ public class GGPOncXMLReader {
 
 				num_rec_sentences[i] += textAnnotation.getSentencesAnnotation().size();
 				num_rec_tokens[i] += textAnnotation.getTokenAnnotation().size();
+				num_recommendations[i]++;
 
 				for (StandOffToken soToken : textAnnotation.getTokenAnnotation())
 					rec_types.addAll(Arrays.asList(soToken.getTokenString().replaceAll("[^äöüßÄÖÜ\\w\\d]", "")));
@@ -266,6 +267,7 @@ public class GGPOncXMLReader {
 
 				num_sentences[i] += textAnnotation.getSentencesAnnotation().size();
 				num_tokens[i] += textAnnotation.getTokenAnnotation().size();
+				num_docs[i]++;
 
 				for (StandOffToken soToken : textAnnotation.getTokenAnnotation())
 					types.addAll(Arrays.asList(soToken.getTokenString().replaceAll("[^äöüßÄÖÜ\\w\\d]", "")));
@@ -280,7 +282,7 @@ public class GGPOncXMLReader {
 			all_rec_types.addAll(rec_types);
 
 			stats.append(name).append(";").
-				append(all_text.getLength()).append(";").
+				append(num_docs[i]).append(";").
 				append(num_recommendations[i]).append(";").
 				append(num_rec_sentences[i]).append(";").
 				append(num_rec_tokens[i]).append(";").
