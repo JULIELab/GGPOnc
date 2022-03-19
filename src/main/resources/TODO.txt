@@ -1,1 +1,0 @@
-Put the cpg-corpus-cms.xml file of the GGPOnc corpus here.
